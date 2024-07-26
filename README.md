@@ -6,11 +6,27 @@ This is a solution for you if:
 - You need to access those domains while connecting your VPN server.
 
 # How to setup
-1. Configure the domain that you need into the `route_generation.py` file
-2. Disconnect the VPN( if connecting)
-3. Open terminal and run the command `python /path/to/route_generation.py`
-4. Copy the output of the script
-5. Execute above command output of the script on your terminal.
+1. find all related domains of target domain
+   1.1 Open new webbrowser tab
+   1.2 Open Browser Developer Tools (F12)
+   1.3 Access to target domain
+   1.4 Go to the 'Network' tab on the Developer tools, and collect the unique domain
+2. Configure the domain that you need into the `route_generation.py` file from above domains
+   ```
+      target_domains = [
+      'github.com',
+      'api.github.com',
+      'avatars.githubusercontent.com',
+      'collector.github.com',
+      'github.githubassets.com',
+      
+      # Add further related domain 
+      ]
+   ```
+3. Disconnect the VPN( if connecting)
+4. Open terminal and run the command `python /path/to/route_generation.py`
+5. Copy the output of the script
+6. Execute above command output of the script on your terminal.
 # Testing
 1. Connect to VPN and try to access to your expected domain.
 
